@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid videos-list mt-3">
+        {% for item in object_list %}
+
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ item.picture.url }}" alt="..." class="img-fluid img-thumbnail rounded"
+                             style="height: 350px ; width: 680px">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text"><small class="text-muted">Educator: <a>{{ item.educator }}</a></small>
+                            </p>
+                            <p class="card-text"><small class="text">So Bai Hoc: {{ item.num_lessons }} Bai</small></p>
+                            <p class="card-text"> {{ item.excerpt }}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
